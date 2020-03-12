@@ -99,6 +99,7 @@ def install_ruby_dependencies
   end
 
   Array(pkgs).each do |pkg|
+    pkg = 'libreadline-dev' if pkg == 'libreadline6'
     package pkg do
       action :nothing
     end.run_action(:install)
