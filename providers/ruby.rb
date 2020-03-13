@@ -100,6 +100,7 @@ def install_ruby_dependencies
 
   Array(pkgs).each do |pkg|
     pkg = 'libreadline-dev' if pkg == 'libreadline6'
+    pkg = 'libssl1.0-dev' if pkg == 'libssl-dev'
     package pkg do
       action :nothing
     end.run_action(:install)
